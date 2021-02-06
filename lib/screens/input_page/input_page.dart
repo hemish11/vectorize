@@ -46,7 +46,7 @@ class _InputPageState extends State<InputPage> {
                 child: Center(
                   child: Text(
                     'Input Vector',
-                    style: TextStyle(fontSize: 30, fontWeight: FontWeight.w700),
+                    style: TextStyle(fontFamily: 'Roboto', fontSize: 34),
                   ),
                 ),
               ),
@@ -75,7 +75,7 @@ class _InputPageState extends State<InputPage> {
                 ),
                 Text(
                   'î',
-                  style: TextStyle(fontSize: 32, fontWeight: FontWeight.w600),
+                  style: TextStyle(fontFamily: 'Roboto', fontSize: 32),
                 ),
                 const Spacer(),
                 SizedBox(
@@ -92,8 +92,8 @@ class _InputPageState extends State<InputPage> {
                   ),
                 ),
                 Text(
-                  'î',
-                  style: TextStyle(fontSize: 32, fontWeight: FontWeight.w600),
+                  'ĵ',
+                  style: TextStyle(fontFamily: 'Roboto', fontSize: 32),
                 ),
                 const Spacer(),
                 SizedBox(
@@ -110,8 +110,8 @@ class _InputPageState extends State<InputPage> {
                   ),
                 ),
                 Text(
-                  'î',
-                  style: TextStyle(fontSize: 32, fontWeight: FontWeight.w600),
+                  'k̂',
+                  style: TextStyle(fontFamily: 'Roboto', fontSize: 32),
                 ),
                 const SizedBox(width: 30),
               ],
@@ -124,7 +124,7 @@ class _InputPageState extends State<InputPage> {
             child: Center(
               child: Text(
                 'Addition',
-                style: TextStyle(fontSize: 34, fontWeight: FontWeight.w600),
+                style: TextStyle(fontFamily: 'Roboto', fontSize: 34),
               ),
             ),
           ),
@@ -150,7 +150,7 @@ class _InputPageState extends State<InputPage> {
                 ),
                 Text(
                   'î',
-                  style: TextStyle(fontSize: 32, fontWeight: FontWeight.w600),
+                  style: TextStyle(fontFamily: 'Roboto', fontSize: 32),
                 ),
                 const Spacer(),
                 SizedBox(
@@ -167,8 +167,8 @@ class _InputPageState extends State<InputPage> {
                   ),
                 ),
                 Text(
-                  'î',
-                  style: TextStyle(fontSize: 32, fontWeight: FontWeight.w600),
+                  'ĵ',
+                  style: TextStyle(fontFamily: 'Roboto', fontSize: 32),
                 ),
                 const Spacer(),
                 SizedBox(
@@ -185,8 +185,8 @@ class _InputPageState extends State<InputPage> {
                   ),
                 ),
                 Text(
-                  'î',
-                  style: TextStyle(fontSize: 32, fontWeight: FontWeight.w600),
+                  'k̂',
+                  style: TextStyle(fontFamily: 'Roboto', fontSize: 32),
                 ),
                 const SizedBox(width: 30),
               ],
@@ -206,7 +206,7 @@ class _InputPageState extends State<InputPage> {
               child: Center(
                 child: Text(
                   'Submit',
-                  style: TextStyle(fontSize: 36, fontWeight: FontWeight.w700),
+                  style: TextStyle(fontFamily: 'Roboto', fontSize: 36),
                 ),
               ),
             ),

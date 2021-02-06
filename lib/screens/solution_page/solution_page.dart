@@ -45,7 +45,7 @@ class _SolutionPageState extends State<SolutionPage> {
                 child: Center(
                   child: Text(
                     'Solution',
-                    style: TextStyle(fontSize: 30, fontWeight: FontWeight.w700),
+                    style: TextStyle(fontFamily: 'Roboto', fontSize: 30),
                   ),
                 ),
               ),
@@ -86,7 +86,7 @@ class _SolutionPageState extends State<SolutionPage> {
                 child: Text(
                   'Done',
                   textAlign: TextAlign.center,
-                  style: TextStyle(fontSize: 34, fontWeight: FontWeight.w700),
+                  style: TextStyle(fontFamily: 'Roboto', fontSize: 34),
                 ),
               ),
             ),

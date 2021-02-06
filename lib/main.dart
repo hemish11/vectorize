@@ -9,6 +9,7 @@ class MyApp extends StatelessWidget {
     return MaterialApp(
       title: 'Vectorize',
       debugShowCheckedModeBanner: false,
+      theme: ThemeData(fontFamily: 'Lato'),
       home: HomePage(),
     );
   }

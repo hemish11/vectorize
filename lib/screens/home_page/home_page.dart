@@ -24,7 +24,7 @@ class _HomePageState extends State<HomePage> {
             child: Center(
               child: Text(
                 'Select Operator',
-                style: TextStyle(fontSize: 34, fontWeight: FontWeight.w700),
+                style: TextStyle(fontFamily: 'Roboto', fontSize: 34),
               ),
             ),
           ),
