@@ -8,11 +8,11 @@ class Background extends StatelessWidget {
   final Widget child;
   final bool showGlass;
 
-  const Background({Key? key, required this.child, this.showGlass = false}) : super(key: key);
+  const Background({Key key, @required this.child, this.showGlass = false}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
-    late Size size = MediaQuery.of(context).size;
+    Size size = MediaQuery.of(context).size;
 
     return Scaffold(
       backgroundColor: CustomColors.backgroundColor,

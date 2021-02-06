@@ -4,7 +4,7 @@ class TextInput extends StatelessWidget {
   final String text;
   final ValueChanged<String> onChanged;
 
-  const TextInput({Key? key, required this.text, required this.onChanged}) : super(key: key);
+  const TextInput({Key key, @required this.text, @required this.onChanged}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {

@@ -1,3 +1,4 @@
+import 'package:extended_math/extended_math.dart';
 import 'package:flutter/material.dart';
 import 'package:vectorize/colors.dart';
 import 'package:vectorize/components/background.dart';
@@ -11,7 +12,7 @@ enum OperatorType { addition, subtraction, cross, dot, angle, modulus }
 class InputPage extends StatefulWidget {
   final OperatorType operatorType;
 
-  const InputPage({Key? key, required this.operatorType}) : super(key: key);
+  const InputPage({Key key, @required this.operatorType}) : super(key: key);
 
   @override
   _InputPageState createState() => _InputPageState();
@@ -223,8 +224,8 @@ class _InputPageState extends State<InputPage> {
               CustomPageRoute(
                 SolutionPage(
                   operatorType: widget.operatorType,
-                  vector1: <double>[x1, y1, z1],
-                  vector2: <double>[x2, y2, z2],
+                  vector1: Vector(<double>[x1, y1, z1]),
+                  vector2: Vector(<double>[x2, y2, z2]),
                 ),
               ),
             ),
