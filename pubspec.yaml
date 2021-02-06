@@ -29,4 +29,4 @@ flutter:
         - asset: assets/Roboto-Bold.ttf
     - family: Lato
       fonts:
-        - asset: assets/Lato-Light.ttf
+        - asset: assets/Lato-Regular.ttf
