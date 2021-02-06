@@ -2,8 +2,16 @@ import 'package:flutter/material.dart';
 import 'package:vectorize/colors.dart';
 import 'package:vectorize/components/background.dart';
 import 'package:vectorize/components/glass_card.dart';
+import 'package:vectorize/screens/input_page/input_page.dart';
 
 class SolutionPage extends StatefulWidget {
+  final OperatorType operatorType;
+  final List<double> vector1;
+  final List<double> vector2;
+
+  const SolutionPage({Key? key, required this.operatorType, required this.vector1, required this.vector2})
+      : super(key: key);
+
   @override
   _SolutionPageState createState() => _SolutionPageState();
 }
@@ -44,7 +52,7 @@ class _SolutionPageState extends State<SolutionPage> {
                 width: size.width * 0.82 - 80,
                 child: Center(
                   child: Text(
-                    'Solution',
+                    'Answer',
                     style: TextStyle(fontFamily: 'Roboto', fontSize: 30),
                   ),
                 ),

@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:vectorize/components/background.dart';
+import 'package:vectorize/components/custom_page_route.dart';
 import 'package:vectorize/components/glass_card.dart';
 import 'package:vectorize/screens/input_page/input_page.dart';
 
@@ -35,9 +36,7 @@ class _HomePageState extends State<HomePage> {
               GestureDetector(
                 onTap: () => Navigator.push(
                   context,
-                  MaterialPageRoute(
-                    builder: (context) => InputPage(),
-                  ),
+                  CustomPageRoute(InputPage(operatorType: OperatorType.addition)),
                 ),
                 child: GlassCard(
                   height: size.width * 0.4,
@@ -51,13 +50,19 @@ class _HomePageState extends State<HomePage> {
                 ),
               ),
               const Spacer(),
-              GlassCard(
-                height: size.width * 0.4,
-                width: size.width * 0.4,
-                child: Center(
-                  child: Text(
-                    '-',
-                    style: TextStyle(fontSize: 60, fontWeight: FontWeight.w600),
+              GestureDetector(
+                onTap: () => Navigator.push(
+                  context,
+                  CustomPageRoute(InputPage(operatorType: OperatorType.subtraction)),
+                ),
+                child: GlassCard(
+                  height: size.width * 0.4,
+                  width: size.width * 0.4,
+                  child: Center(
+                    child: Text(
+                      '-',
+                      style: TextStyle(fontSize: 60, fontWeight: FontWeight.w600),
+                    ),
                   ),
                 ),
               ),
@@ -68,24 +73,36 @@ class _HomePageState extends State<HomePage> {
           Row(
             children: [
               SizedBox(width: size.width * 0.05),
-              GlassCard(
-                height: size.width * 0.4,
-                width: size.width * 0.4,
-                child: Center(
-                  child: Text(
-                    '⨯',
-                    style: TextStyle(fontSize: 80, fontWeight: FontWeight.w600),
+              GestureDetector(
+                onTap: () => Navigator.push(
+                  context,
+                  CustomPageRoute(InputPage(operatorType: OperatorType.cross)),
+                ),
+                child: GlassCard(
+                  height: size.width * 0.4,
+                  width: size.width * 0.4,
+                  child: Center(
+                    child: Text(
+                      '⨯',
+                      style: TextStyle(fontSize: 80, fontWeight: FontWeight.w600),
+                    ),
                   ),
                 ),
               ),
               const Spacer(),
-              GlassCard(
-                height: size.width * 0.4,
-                width: size.width * 0.4,
-                child: Center(
-                  child: Text(
-                    '⋅',
-                    style: TextStyle(fontSize: 70, fontWeight: FontWeight.w600),
+              GestureDetector(
+                onTap: () => Navigator.push(
+                  context,
+                  CustomPageRoute(InputPage(operatorType: OperatorType.dot)),
+                ),
+                child: GlassCard(
+                  height: size.width * 0.4,
+                  width: size.width * 0.4,
+                  child: Center(
+                    child: Text(
+                      '⋅',
+                      style: TextStyle(fontSize: 70, fontWeight: FontWeight.w600),
+                    ),
                   ),
                 ),
               ),
@@ -94,26 +111,38 @@ class _HomePageState extends State<HomePage> {
           ),
           const SizedBox(height: 30),
           Expanded(
-            child: GlassCard(
-              height: size.width * 0.4,
-              width: size.width * 0.9,
-              child: Center(
-                child: Text(
-                  '∠ betⁿ 2 Vectors',
-                  style: TextStyle(fontSize: 40, fontWeight: FontWeight.w600),
+            child: GestureDetector(
+              onTap: () => Navigator.push(
+                context,
+                CustomPageRoute(InputPage(operatorType: OperatorType.angle)),
+              ),
+              child: GlassCard(
+                height: size.width * 0.4,
+                width: size.width * 0.9,
+                child: Center(
+                  child: Text(
+                    '∠ betⁿ 2 Vectors',
+                    style: TextStyle(fontSize: 40, fontWeight: FontWeight.w600),
+                  ),
                 ),
               ),
             ),
           ),
           const SizedBox(height: 30),
           Expanded(
-            child: GlassCard(
-              height: size.width * 0.4,
-              width: size.width * 0.9,
-              child: Center(
-                child: Text(
-                  '| | of Vector',
-                  style: TextStyle(fontSize: 40, fontWeight: FontWeight.w600),
+            child: GestureDetector(
+              onTap: () => Navigator.push(
+                context,
+                CustomPageRoute(InputPage(operatorType: OperatorType.modulus)),
+              ),
+              child: GlassCard(
+                height: size.width * 0.4,
+                width: size.width * 0.9,
+                child: Center(
+                  child: Text(
+                    '| | of Vector',
+                    style: TextStyle(fontSize: 40, fontWeight: FontWeight.w600),
+                  ),
                 ),
               ),
             ),

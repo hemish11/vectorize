@@ -11,4 +11,6 @@ class CustomColors {
 
   static Color fontColor = Color(0xFF000000);
   static Color goldenColor = Color(0xFFFFD700);
+
+  static Color transparent = Color(0x00FFFFFF);
 }
