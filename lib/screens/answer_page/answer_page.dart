@@ -18,6 +18,112 @@ class SolutionPage extends StatefulWidget {
 }
 
 class _SolutionPageState extends State<SolutionPage> {
+  String inputString = '';
+  String answerString = '';
+  Vector answerVector = Vector([0, 0, 0]);
+
+  double roundDouble(double value, int places) {
+    double mod = pow(10.0, places);
+    return ((value * mod).round().toDouble() / mod);
+  }
+
+  @override
+  void initState() {
+    switch (widget.operatorType) {
+      case OperatorType.addition:
+        answerVector = widget.vector1 + widget.vector2;
+
+        String x1 = '(${widget.vector1.itemAt(1).toString().replaceAll(RegExp(r"([.]*0)(?!.*\d)"), "")})î';
+        String y1 = '(${widget.vector1.itemAt(2).toString().replaceAll(RegExp(r"([.]*0)(?!.*\d)"), "")})ĵ';
+        String z1 = '(${widget.vector1.itemAt(3).toString().replaceAll(RegExp(r"([.]*0)(?!.*\d)"), "")})k̂';
+
+        String x2 = '(${widget.vector2.itemAt(1).toString().replaceAll(RegExp(r"([.]*0)(?!.*\d)"), "")})î';
+        String y2 = '(${widget.vector2.itemAt(2).toString().replaceAll(RegExp(r"([.]*0)(?!.*\d)"), "")})ĵ';
+        String z2 = '(${widget.vector2.itemAt(3).toString().replaceAll(RegExp(r"([.]*0)(?!.*\d)"), "")})k̂';
+
+        inputString = '($x1 + $y1 + $z1)\n+\n($x2 + $y2 + $z2)';
+        answerString =
+            '(${answerVector.itemAt(1).toString().replaceAll(RegExp(r"([.]*0)(?!.*\d)"), "")})î + (${answerVector.itemAt(2).toString().replaceAll(RegExp(r"([.]*0)(?!.*\d)"), "")})ĵ + (${answerVector.itemAt(3).toString().replaceAll(RegExp(r"([.]*0)(?!.*\d)"), "")})k̂';
+        break;
+      case OperatorType.subtraction:
+        answerVector = widget.vector1 - widget.vector2;
+
+        String x1 = '(${widget.vector1.itemAt(1).toString().replaceAll(RegExp(r"([.]*0)(?!.*\d)"), "")})î';
+        String y1 = '(${widget.vector1.itemAt(2).toString().replaceAll(RegExp(r"([.]*0)(?!.*\d)"), "")})ĵ';
+        String z1 = '(${widget.vector1.itemAt(3).toString().replaceAll(RegExp(r"([.]*0)(?!.*\d)"), "")})k̂';
+
+        String x2 = '(${widget.vector2.itemAt(1).toString().replaceAll(RegExp(r"([.]*0)(?!.*\d)"), "")})î';
+        String y2 = '(${widget.vector2.itemAt(2).toString().replaceAll(RegExp(r"([.]*0)(?!.*\d)"), "")})ĵ';
+        String z2 = '(${widget.vector2.itemAt(3).toString().replaceAll(RegExp(r"([.]*0)(?!.*\d)"), "")})k̂';
+
+        inputString = '($x1 + $y1 + $z1)\n-\n($x2 + $y2 + $z2)';
+        answerString =
+            '(${answerVector.itemAt(1).toString().replaceAll(RegExp(r"([.]*0)(?!.*\d)"), "")})î + (${answerVector.itemAt(2).toString().replaceAll(RegExp(r"([.]*0)(?!.*\d)"), "")})ĵ + (${answerVector.itemAt(3).toString().replaceAll(RegExp(r"([.]*0)(?!.*\d)"), "")})k̂';
+        break;
+      case OperatorType.cross:
+        answerVector = widget.vector1.cross(widget.vector2);
+
+        String x1 = '(${widget.vector1.itemAt(1).toString().replaceAll(RegExp(r"([.]*0)(?!.*\d)"), "")})î';
+        String y1 = '(${widget.vector1.itemAt(2).toString().replaceAll(RegExp(r"([.]*0)(?!.*\d)"), "")})ĵ';
+        String z1 = '(${widget.vector1.itemAt(3).toString().replaceAll(RegExp(r"([.]*0)(?!.*\d)"), "")})k̂';
+
+        String x2 = '(${widget.vector2.itemAt(1).toString().replaceAll(RegExp(r"([.]*0)(?!.*\d)"), "")})î';
+        String y2 = '(${widget.vector2.itemAt(2).toString().replaceAll(RegExp(r"([.]*0)(?!.*\d)"), "")})ĵ';
+        String z2 = '(${widget.vector2.itemAt(3).toString().replaceAll(RegExp(r"([.]*0)(?!.*\d)"), "")})k̂';
+
+        inputString = '($x1 + $y1 + $z1)\n⨯\n($x2 + $y2 + $z2)';
+        answerString =
+            '(${answerVector.itemAt(1).toString().replaceAll(RegExp(r"([.]*0)(?!.*\d)"), "")})î + (${answerVector.itemAt(2).toString().replaceAll(RegExp(r"([.]*0)(?!.*\d)"), "")})ĵ + (${answerVector.itemAt(3).toString().replaceAll(RegExp(r"([.]*0)(?!.*\d)"), "")})k̂';
+        break;
+      case OperatorType.dot:
+        answerString = widget.vector1.dot(widget.vector2).toString().replaceAll(RegExp(r"([.]*0)(?!.*\d)"), "");
+
+        String x1 = '(${widget.vector1.itemAt(1).toString().replaceAll(RegExp(r"([.]*0)(?!.*\d)"), "")})î';
+        String y1 = '(${widget.vector1.itemAt(2).toString().replaceAll(RegExp(r"([.]*0)(?!.*\d)"), "")})ĵ';
+        String z1 = '(${widget.vector1.itemAt(3).toString().replaceAll(RegExp(r"([.]*0)(?!.*\d)"), "")})k̂';
+
+        String x2 = '(${widget.vector2.itemAt(1).toString().replaceAll(RegExp(r"([.]*0)(?!.*\d)"), "")})î';
+        String y2 = '(${widget.vector2.itemAt(2).toString().replaceAll(RegExp(r"([.]*0)(?!.*\d)"), "")})ĵ';
+        String z2 = '(${widget.vector2.itemAt(3).toString().replaceAll(RegExp(r"([.]*0)(?!.*\d)"), "")})k̂';
+
+        inputString = '($x1 + $y1 + $z1)\n⋅\n($x2 + $y2 + $z2)';
+        break;
+      case OperatorType.angle:
+        answerString = widget.vector1
+                .angleBetween(widget.vector2, degrees: true)
+                .toStringAsFixed(10)
+                .replaceAll(RegExp(r"([.]*0)(?!.*\d)"), "") +
+            '°';
+
+        String x1 = '(${widget.vector1.itemAt(1).toString().replaceAll(RegExp(r"([.]*0)(?!.*\d)"), "")})î';
+        String y1 = '(${widget.vector1.itemAt(2).toString().replaceAll(RegExp(r"([.]*0)(?!.*\d)"), "")})ĵ';
+        String z1 = '(${widget.vector1.itemAt(3).toString().replaceAll(RegExp(r"([.]*0)(?!.*\d)"), "")})k̂';
+
+        String x2 = '(${widget.vector2.itemAt(1).toString().replaceAll(RegExp(r"([.]*0)(?!.*\d)"), "")})î';
+        String y2 = '(${widget.vector2.itemAt(2).toString().replaceAll(RegExp(r"([.]*0)(?!.*\d)"), "")})ĵ';
+        String z2 = '(${widget.vector2.itemAt(3).toString().replaceAll(RegExp(r"([.]*0)(?!.*\d)"), "")})k̂';
+
+        inputString = 'Angle between\n$x1 + $y1 + $z1\nand\n$x2 + $y2 + $z2';
+        break;
+      case OperatorType.modulus:
+        double xSquared = pow(widget.vector1.itemAt(1).toDouble(), 2);
+        double ySquared = pow(widget.vector1.itemAt(2).toDouble(), 2);
+        double zSquared = pow(widget.vector1.itemAt(3).toDouble(), 2);
+
+        answerString =
+            roundDouble(sqrt(xSquared + ySquared + zSquared), 10).toString().replaceAll(RegExp(r"([.]*0)(?!.*\d)"), "");
+
+        String x1 = '(${widget.vector1.itemAt(1).toString().replaceAll(RegExp(r"([.]*0)(?!.*\d)"), "")})î';
+        String y1 = '(${widget.vector1.itemAt(2).toString().replaceAll(RegExp(r"([.]*0)(?!.*\d)"), "")})ĵ';
+        String z1 = '(${widget.vector1.itemAt(3).toString().replaceAll(RegExp(r"([.]*0)(?!.*\d)"), "")})k̂';
+
+        inputString = '|$x1 + $y1 + $z1|';
+        break;
+    }
+
+    super.initState();
+  }
+
   @override
   Widget build(BuildContext context) {
     Size size = MediaQuery.of(context).size;
@@ -63,13 +169,15 @@ class _SolutionPageState extends State<SolutionPage> {
           ),
           const SizedBox(height: 30),
           GlassCard(
-            height: 150,
             width: size.width * 0.9,
-            child: Center(
-              child: Text(
-                '3î + 2î + î\n+\n3î + 2î + î',
-                textAlign: TextAlign.center,
-                style: TextStyle(fontSize: 34, fontWeight: FontWeight.w700),
+            child: Padding(
+              padding: const EdgeInsets.all(20.0),
+              child: Center(
+                child: Text(
+                  inputString,
+                  textAlign: TextAlign.center,
+                  style: TextStyle(fontSize: 34, fontWeight: FontWeight.w700),
+                ),
               ),
             ),
           ),
@@ -79,7 +187,7 @@ class _SolutionPageState extends State<SolutionPage> {
             width: size.width * 0.9,
             child: Center(
               child: Text(
-                '= 5î + 2î + î',
+                '= $answerString',
                 textAlign: TextAlign.center,
                 style: TextStyle(fontSize: 34, fontWeight: FontWeight.w700),
               ),

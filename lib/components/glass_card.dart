@@ -8,7 +8,7 @@ class GlassCard extends StatelessWidget {
   final double height;
   final double width;
 
-  const GlassCard({Key key, @required this.height, @required this.width, @required this.child}) : super(key: key);
+  const GlassCard({Key key, this.height, @required this.width, @required this.child}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
