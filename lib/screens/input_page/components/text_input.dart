@@ -8,12 +8,17 @@ class TextInput extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return TextField(
-      style: TextStyle(fontSize: 32, fontWeight: FontWeight.w600),
-      onChanged: onChanged,
-      decoration: InputDecoration(
-        border: InputBorder.none,
-        hintText: text,
+    return Padding(
+      padding: const EdgeInsets.only(right: 10),
+      child: TextField(
+        style: TextStyle(fontSize: 32, fontWeight: FontWeight.w600),
+        onChanged: onChanged,
+        textAlign: TextAlign.end,
+        keyboardType: TextInputType.number,
+        decoration: InputDecoration(
+          border: InputBorder.none,
+          hintText: text,
+        ),
       ),
     );
   }
