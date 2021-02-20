@@ -14,7 +14,7 @@ class TextInput extends StatelessWidget {
         style: TextStyle(fontSize: 32, fontWeight: FontWeight.w600),
         onChanged: onChanged,
         textAlign: TextAlign.end,
-        keyboardType: TextInputType.number,
+        keyboardType: TextInputType.numberWithOptions(decimal: true, signed: true),
         decoration: InputDecoration(
           border: InputBorder.none,
           hintText: text,
